@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581404906822.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7B7133D8",
+    "lastKnownWriteTime" : 1581408677,
+    "last_content_update" : 1581408677910,
+    "path" : "~/R-stuff/Lifebrain/Lifebrain/R/ggplot-themes.R",
+    "project_path" : "R/ggplot-themes.R",
+    "properties" : {
+        "cursorPosition" : "122,41",
+        "scrollLine" : "67"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

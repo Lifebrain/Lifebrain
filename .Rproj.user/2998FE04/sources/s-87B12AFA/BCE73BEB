@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581404996736.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BCE73BEB",
+    "lastKnownWriteTime" : 1581408894,
+    "last_content_update" : 1581408894542,
+    "path" : "~/R-stuff/Lifebrain/Lifebrain/R/logo.R",
+    "project_path" : "R/logo.R",
+    "properties" : {
+        "cursorPosition" : "30,2",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

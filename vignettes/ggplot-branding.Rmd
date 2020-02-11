@@ -1,0 +1,195 @@
+---
+title: "Branding ggplots"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ggplot-branding}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>",
+out.width = "100%", 
+fig.width = 10, 
+fig.retina = TRUE
+)
+devtools::load_all(".")
+```
+
+```{r setup, include=FALSE}
+library(Lifebrain)
+```
+
+In the event of needing plots that have Lifebrain branding for presentations, reports etc. we have custom ggplot2 themes and colour scales to ensure that we have consistent branding. These are particularly suitable when using the rmarkdown-templates that also accompany this package.
+
+## Applying the Lifebrain themes to ggplot
+
+The themes are quite minimal, applying mostly just the corrent font and colours to match out branding.
+
+```{r warning=FALSE, message = FALSE}
+library(ggplot2)
+library(dplyr)
+
+p <- mtcars %>% 
+  ggplot(aes(x = wt, y = disp, colour = cyl)) +
+  geom_point() +
+  labs(title = "Lifebrain themes", 
+       subtitle = "of various kinds")
+
+p +
+  theme_lifebrain()
+```
+
+There are variations around the main theme, to adapt to various possible scenarios and tastes, while maintaing a certain aesthetic
+
+```{r}
+p + theme_lifebrain_grid()
+
+p + theme_lifebrain_dark()
+
+p + theme_lifebrain_void()
+```
+
+and there are also some pre-defined combinations of the above also.
+
+```{r}
+p + theme_lifebrain_dark_grid()
+
+p + theme_lifebrain_dark_void()
+```
+
+## Colour scales
+
+### Lifebrain scales
+
+The colour scales work much the same way as standard ggplot scales do.
+The main difference is you need to be aware if the data your are colouring is discrete (categorical) or continuous, to turn on or off the `discrete` argument.
+
+```{r}
+p + 
+  theme_lifebrain() +
+  scale_colour_lifebrain(discrete = FALSE) 
+
+mtcars %>% 
+  ggplot(aes(x = wt, y = disp, colour = factor(cyl))) +
+  geom_point() +
+  labs(title = "Lifebrain themes", 
+       subtitle = "of various kinds") + 
+  theme_lifebrain() +
+  scale_colour_lifebrain(discrete = TRUE) 
+```
+
+By default, the scales grab the "main" palette, which consists of the blue and green colours of our logo. 
+There are also other variations
+
+```{r echo = FALSE}
+Lifebrain:::lifebrain_palettes %>% 
+  lapply(function(x) tibble(colour = x, r = 1:length(x))) %>% 
+  bind_rows(.id="palette") %>% 
+  mutate(palette = factor(palette, 
+                          levels = names(Lifebrain:::lifebrain_palettes))
+  ) %>% 
+  ggplot(aes(x = r, y=palette, fill = I(colour))) +
+  geom_tile() +
+  labs(title = "Lifebrain palettes", x="") + 
+  theme_lifebrain()
+```
+
+
+```{r}
+p + 
+  theme_lifebrain() +
+  scale_colour_lifebrain("dark", discrete = FALSE) 
+
+p + 
+  theme_lifebrain_dark() +
+  scale_colour_lifebrain("light", discrete = FALSE) 
+
+p + 
+  theme_lifebrain() +
+  scale_colour_lifebrain("yellow", discrete = FALSE) 
+```
+
+<!-- ## Adding logo to plots -->
+
+<!-- Adding the Lifebrain logo to plots is a great way to brand images further, though should be used carefully, so it's not too garish. -->
+
+<!-- ```{r} -->
+<!--  mtcars %>%  -->
+<!--   ggplot(aes(x = wt, y = disp, colour = cyl))+ -->
+<!--   geom_point() + -->
+<!--   labs(title = "Lifebrain themes",  -->
+<!--        subtitle = "of various kinds") + -->
+<!--   scale_colour_lifebrain(discrete = FALSE) + -->
+<!--   theme_lifebrain() + -->
+<!--   add_lifebrain_logo("long", alpha=.5)  -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- mtcars %>%  -->
+<!--   ggplot(aes(x = wt, y = disp, colour = cyl)) + -->
+<!--   geom_point() + -->
+<!--   labs(title = "Lifebrain themes",  -->
+<!--        subtitle = "of various kinds")  + -->
+<!--   scale_colour_lifebrain(discrete = FALSE) + -->
+<!--   theme_lifebrain() + -->
+<!--   add_lifebrain_logo(alpha=.7)  -->
+<!-- ``` -->
+
+<!-- You can control the size and position of the logos by using the `xmin`, `xmax`, `ymin`, `ymax` parameters, defining where on the plot it is placed.  -->
+
+
+<!-- ```{r} -->
+<!-- mtcars %>%  -->
+<!--   ggplot(aes(x = wt, y = disp, colour = cyl)) + -->
+<!--   geom_point() + -->
+<!--   labs(title = "Lifebrain themes",  -->
+<!--        subtitle = "of various kinds")  + -->
+<!--   scale_colour_lifebrain(discrete = FALSE) + -->
+<!--   theme_lifebrain() + -->
+<!--   add_lifebrain_logo(alpha = .7,  -->
+<!--                 xmin = 4.5, xmax = Inf, -->
+<!--                 ymin = 60 , ymax = 100 -->
+<!--   )  -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- mtcars %>%  -->
+<!--   ggplot(aes(x = wt, y = disp, colour = cyl)) + -->
+<!--   geom_point() + -->
+<!--   labs(title = "Lifebrain themes",  -->
+<!--        subtitle = "of various kinds")  + -->
+<!--   scale_colour_lifebrain(discrete = FALSE) + -->
+<!--   theme_lifebrain() + -->
+<!--   add_lifebrain_logo(type = "brain", -->
+<!--                 alpha = .7,  -->
+<!--                 xmin = 5, xmax = Inf, -->
+<!--                 ymin = 60 , ymax = 110 -->
+<!--   )  -->
+<!-- ``` -->
+
+<!-- You can also add the logo outside the plot area, but that requires extra work, as ggplot automatically cuts away all datapoints that dont fit in the main plot area. -->
+
+<!-- To coordinates can be found with some trial and error, here we want to place the logo at the bottom right. The plot y-axis starts at `50`, and the x-axis ends at `5.5`. SO here we specify that the logo should be placed below the y-axis and to the right of the x-axis, extending the main plot area beyong the data. -->
+
+<!-- To keep whatever we place there, we need to tell ggplot to _not_ `clip` anything outside the main plot out, turning clipping off with `coord_cartesian`. -->
+
+<!-- After this, we need to tell ggplot to extend the plot to include the area we placed the logo. This is trial and error, changing the numbers in `units` changes how much the plot is extended to each of it's four sides. `1` is no extention, and any number above or below that will increase or reduce the plotting area, respectively. -->
+
+<!-- ```{r} -->
+<!-- mtcars %>%  -->
+<!--   ggplot(aes(x = wt, y = disp, colour = cyl)) + -->
+<!--   geom_point() + -->
+<!--   labs(title = "Lifebrain themes",  -->
+<!--        subtitle = "of various kinds")  + -->
+<!--   scale_colour_lifebrain(discrete = FALSE) + -->
+<!--   theme_lifebrain() + -->
+<!--   add_lifebrain_logo(alpha = 1,  -->
+<!--                 xmin = 4.7, xmax = 6.7, -->
+<!--                 ymin = -10 , ymax = 30 -->
+<!--   ) + -->
+<!--   coord_cartesian(clip = "off") + -->
+<!--   theme(plot.margin = unit(c(1, 2, 3, 1), "lines")) -->
+<!-- ``` -->

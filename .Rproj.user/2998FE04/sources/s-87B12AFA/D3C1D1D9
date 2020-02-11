@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581404446165.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2625165514",
+    "id" : "D3C1D1D9",
+    "lastKnownWriteTime" : 1581404446,
+    "last_content_update" : 1581404446,
+    "path" : "~/R-stuff/Lifebrain/Lifebrain/_pkgdown.yml",
+    "project_path" : "_pkgdown.yml",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

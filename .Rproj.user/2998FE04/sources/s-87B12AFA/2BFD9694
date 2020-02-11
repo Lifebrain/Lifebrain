@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581404919808.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2BFD9694",
+    "lastKnownWriteTime" : 1581409134,
+    "last_content_update" : 1581409134946,
+    "path" : "~/R-stuff/Lifebrain/Lifebrain/R/palette.R",
+    "project_path" : "R/palette.R",
+    "properties" : {
+        "cursorPosition" : "36,0",
+        "scrollLine" : "11"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581408411741.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "17DF0740",
+    "lastKnownWriteTime" : 1581408802,
+    "last_content_update" : 1581408802039,
+    "path" : "~/R-stuff/Lifebrain/Lifebrain/vignettes/ggplot-branding.Rmd",
+    "project_path" : "vignettes/ggplot-branding.Rmd",
+    "properties" : {
+        "cursorPosition" : "195,0",
+        "scrollLine" : "158"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

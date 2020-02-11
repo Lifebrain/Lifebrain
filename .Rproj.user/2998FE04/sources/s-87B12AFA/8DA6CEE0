@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581404474434.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8DA6CEE0",
+    "lastKnownWriteTime" : 1581404696,
+    "last_content_update" : 1581404696224,
+    "path" : "~/R-stuff/Lifebrain/Lifebrain/.travis.yml",
+    "project_path" : ".travis.yml",
+    "properties" : {
+        "cursorPosition" : "5,7",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

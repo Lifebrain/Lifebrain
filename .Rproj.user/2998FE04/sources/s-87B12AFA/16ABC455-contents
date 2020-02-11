@@ -1,15 +1,27 @@
 Package: Lifebrain
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Lifebrain branding materials for R
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person("Athanasia Mo", "Mowinckel", 
+        email = "a.m.mowinckel@psykologi.uio.no", 
+        role = c("aut", "cre"),
+        comment = c(ORCID = "0000-0002-5756-0223"))
+Description: Contains Lifebrain branding materials for R. 
+  Including latex templates, ggplot themes and colour scales.
+License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 Imports: 
-    ggplot2
+    ggplot2,
+    png,
+    dplyr
 Suggests: 
-    testthat
+    testthat (>= 2.1.0),
+    devtools,
+    covr,
+    knitr,
+    rmarkdown
+URL: https://github.com/Lifebrain/Lifebrain
+BugReports: https://github.com/Lifebrain/Lifebrain/issues
+VignetteBuilder: knitr
+RoxygenNote: 7.0.2
